@@ -94,7 +94,7 @@ export default {
   },
   data () {
     return {
-      msg: 'Welcome to PetsHome!'
+      msg: '主页内容！！！'
     }
   }
 }
