@@ -16,6 +16,7 @@
     <div class="layout-header">
     </div>
     <div class="layout-body">
+      <slot></slot>
     </div>
     <div style="height: 200px"></div>
     <div class="layout-copy">
