@@ -1,4 +1,5 @@
 <template>
+  <Layout>
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
@@ -81,11 +82,16 @@
       </li>
     </ul>
   </div>
+    </Layout>
 </template>
 
 <script>
+import Layout from '@/components/layout/BaseLayout'
 export default {
   name: 'HelloWorld',
+  components: {
+    Layout
+  },
   data () {
     return {
       msg: 'Welcome to PetsHome!'
