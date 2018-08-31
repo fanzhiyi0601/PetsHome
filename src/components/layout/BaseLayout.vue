@@ -2,7 +2,7 @@
   <div class="layout">
     <div class="layout-ceiling">
       <div class="layout-ceiling-left">
-        <a href="#">Hi,请登录</a>
+        <a :href="'#/Login'">Hi,请登录</a>
         <a href="#">免费注册</a>
       </div>
       <div class="layout-ceiling-right">
@@ -15,6 +15,7 @@
     </div>
     <div class="layout-header">
       <slot name="header"></slot>
+      <!--<Button type="primary" @click="time">点这里扫二维码加入我们吧！</Button>-->
     </div>
     <div class="layout-body">
       <slot name="body"></slot>
@@ -46,6 +47,23 @@ export default {
   name: 'BaseLayout',
   components: {
     BackTop
+  },
+  created () {
+    this.time()
+  },
+  methods: {
+    time () {
+      this.$Notice.config({
+        top: 60
+      })
+      this.$Notice.open({
+        title: '宠物之家',
+        desc:
+        '领养代替购买，给每个小宝贝一个温暖的家！',
+        duration: 0,
+        color: 'black'
+      })
+    }
   }
 }
 </script>
@@ -64,8 +82,8 @@ export default {
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
   }
   .layout-body{
-    height: 1500px;
-    background: #9ea7b4;
+    height: 1400px;
+    background: #dddee1;
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
   }
   .layout-copy{
@@ -74,7 +92,7 @@ export default {
     color: #9ea7b4;
   }
   .layout-ceiling{
-    background: #f5f7f9;
+    background: #495060;
     padding: 10px 0;
     overflow: hidden;
   }

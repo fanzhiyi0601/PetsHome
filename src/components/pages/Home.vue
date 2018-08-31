@@ -1,7 +1,18 @@
 <template>
   <Layout>
     <div slot="header">
+      <Tooltip style=" float: left;margin-left:340px;margin-top: 20px;"  placement="left-start">
       <img class="logo" src="../../assets/logo.jpg">
+        <div style="line-height: 20px" slot="content">
+          <p>请记得我的寿命约有十到十五年，别抛弃我；</p>
+          <p>请对我有耐心，你要给我一些时间来了解我；</p>
+          <p>请别对我生气太久，也别把我关起来惩罚我；</p>
+          <p>请时常对我说话，纵使我不懂但我能感觉到；</p>
+          <p>在我年老时请好好照顾我，因为你也会变老；</p>
+          <p>当我要捱过生老病死时，请不要哭泣，</p>
+          <p> 请你永远不要忘记，我爱你！</p>
+        </div>
+      </Tooltip>
       <!--<i-input class="logo-input" :value.sync="value" placeholder="请输入...">-->
       <!--</i-input>-->
       <i-input class="logo-input" v-model="search" placeholder="喜欢我们就带我们回家吧">
@@ -27,7 +38,7 @@
             <DropdownItem divided>志愿者团队</DropdownItem>
           </DropdownMenu>
         </Dropdown>
-        <Menu mode="horizontal" :theme="dark" active-name="1">
+        <i-menu mode="horizontal" :theme="theme" active-name="1">
           <MenuItem name="1">
             <Icon type="ios-paper"></Icon>
             首页
@@ -63,14 +74,14 @@
             <Icon type="logo-twitter"></Icon>
             合作中心
           </MenuItem>
-        </Menu>
+        </i-menu>
       </div>
     </div>
   <div slot="body">
     <div class="content">
     <Carousel style="margin: 1px; float: left;height: 397px;width: 800px; border:2px solid #e9eaec"
-      v-model="value3"
-      :autoplay="setting.autoplay"
+      v-model="value1"
+      :autoplay="true"
       :autoplay-speed="setting.autoplaySpeed"
       :dots="setting.dots"
       :radius-dot="setting.radiusDot"
@@ -114,14 +125,118 @@
         </Row>
       </div>
     </div>
-    <div class="sub-title">
+    <div class="small-title">
       <p>狗狗领养</p>
+      <p style="font-size: 10px; margin-left: 380px; margin-top: 50px">领养代替购买，给他们一个温暖的家</p>
+      <a href="#"><Icon type="ios-arrow-back" />发现更多<Icon type="ios-arrow-forward" /></a>
     </div>
-    <div class="content" style="margin-top: 80px"></div>
-    <div class="sub-title">
+    <div class="content" style="margin-top: 80px">
+      <Carousel style="margin: 1px; float: left;height: 397px;width: 1050px;"
+                v-model="value2"
+                :autoplay="setting.autoplay"
+                :autoplay-speed="setting.autoplaySpeed"
+                :dots="setting.dots"
+                :radius-dot="setting.radiusDot"
+                :trigger="setting.trigger"
+                :arrow="setting.arrow">
+        <CarouselItem>
+          <div class="dog-carousel">
+            <Row type="flex" justify="center" gutter="30" align="top" class="code-row-bg">
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+            </Row>
+          </div>
+        </CarouselItem>
+        <CarouselItem>
+          <div class="dog-carousel">
+            <Row type="flex" justify="center" gutter="30" align="top" class="code-row-bg">
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+            </Row>
+          </div>
+        </CarouselItem>
+        <CarouselItem>
+          <div class="dog-carousel">
+            <Row type="flex" justify="center" gutter="30" align="top" class="code-row-bg">
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+            </Row>
+          </div>
+        </CarouselItem>
+        <CarouselItem>
+          <div class="dog-carousel">
+            <Row type="flex" justify="center" gutter="30" align="top" class="code-row-bg">
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+            </Row>
+          </div>
+        </CarouselItem>
+      </Carousel>
+    </div>
+    <div class="small-title">
       <p>猫咪领养</p>
+      <p style="font-size: 10px; margin-left: 380px; margin-top: 50px">喜欢我们就带我们走吧！</p>
+      <a href="#"><Icon type="ios-arrow-back" />发现更多<Icon type="ios-arrow-forward" /></a>
     </div>
-    <div class="content" style="margin-top: 80px"></div>
+    <div class="content" style="margin-top: 80px">
+      <Carousel style="margin: 1px; float: left;height: 397px;width: 1050px;"
+                v-model="value2"
+                :autoplay="setting.autoplay"
+                :autoplay-speed="setting.autoplaySpeed"
+                :dots="setting.dots"
+                :radius-dot="setting.radiusDot"
+                :trigger="setting.trigger"
+                :arrow="setting.arrow">
+        <CarouselItem>
+          <div class="dog-carousel">
+            <Row type="flex" justify="center" gutter="30" align="top" class="code-row-bg">
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+            </Row>
+          </div>
+        </CarouselItem>
+        <CarouselItem>
+          <div class="dog-carousel">
+            <Row type="flex" justify="center" gutter="30" align="top" class="code-row-bg">
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+            </Row>
+          </div>
+        </CarouselItem>
+        <CarouselItem>
+          <div class="dog-carousel">
+            <Row type="flex" justify="center" gutter="30" align="top" class="code-row-bg">
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+            </Row>
+          </div>
+        </CarouselItem>
+        <CarouselItem>
+          <div class="dog-carousel">
+            <Row type="flex" justify="center" gutter="30" align="top" class="code-row-bg">
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+              <Col span="5"><p>col-4</p></Col>
+            </Row>
+          </div>
+        </CarouselItem>
+      </Carousel>
+    </div>
    </div>
   </Layout>
 </template>
@@ -142,16 +257,18 @@ export default {
   data () {
     return {
       search: '',
+      theme: 'light',
       title: '领养代替购买',
       option: '',
-      value3: 1,
+      value1: 1,
+      value2: 2,
       setting: {
-        autoplay: true,
-        autoplaySpeed: 2000,
+        autoplay: false,
+        autoplaySpeed: 3000,
         dots: 'none',
         radiusDot: false,
         trigger: 'click',
-        arrow: 'hover'
+        arrow: 'always'
       }
     }
   }
@@ -162,9 +279,6 @@ export default {
   .logo {
     width: 160px;
     height: 100px;
-    float: left;
-    margin-left: 340px;
-    margin-top: 20px;
     border-radius: 20px;
   }
   .logo-input{
@@ -197,12 +311,25 @@ export default {
   .content a{
     position: relative;
   }
-  .sub-title p{
+  .small-title p{
     position: absolute;
     margin-left: 270px;
-    margin-top: 45px;
+    margin-top: 38px;
     font-family: 'Microsoft YaHei', serif;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
+  }
+  .small-title a{
+    position:absolute;
+    margin-left: 410px;
+    margin-top: 50px;
+    font-size: 16px;
+    color: #515a6e;
+    font-family: 'Microsoft YaHei', serif;
+  }
+  .dog-carousel p{
+    height: 300px;
+    background: aqua;
+    margin-top: 40px;
   }
 </style>
