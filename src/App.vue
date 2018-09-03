@@ -6,8 +6,12 @@
 </template>
 
 <script>
+import P1 from '@/components/component/DivideLine'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    P1
+  }
 }
 </script>
 

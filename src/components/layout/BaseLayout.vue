@@ -3,12 +3,12 @@
     <div class="layout-ceiling">
       <div class="layout-ceiling-left">
         <a :href="'#/Login'">Hi,请登录</a>
-        <a href="#">免费注册</a>
+        <a :href="'#/Login'">免费注册</a>
       </div>
       <div class="layout-ceiling-right">
         <a href="#">宠物之家首页</a> |
         <a href="#">我的领养</a> |
-        <a href="#">我的收藏</a> |
+        <a href="#">发布领养</a> |
         <a href="#">联系客服</a>
         <a href="#" style="margin-left: 15px">个人中心</a>
       </div>
@@ -60,7 +60,7 @@ export default {
         title: '宠物之家',
         desc:
         '领养代替购买，给每个小宝贝一个温暖的家！',
-        duration: 0,
+        duration: 5,
         color: 'black'
       })
     }
@@ -82,7 +82,7 @@ export default {
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
   }
   .layout-body{
-    height: 1400px;
+    height: 1500px;
     background: #dddee1;
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
   }
@@ -109,6 +109,8 @@ export default {
   }
   .layout-ceiling-right a{
     color: #9ba7b5;
+    margin-left: 3px;
+    margin-right: 3px;
   }
   .copy-content a {
     color: gray;
