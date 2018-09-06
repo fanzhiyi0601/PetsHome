@@ -10,7 +10,7 @@
 <script>
 import Layout from '@/components/layout/BaseLayout'
 export default {
-  name: 'Publish',
+  name: 'Information',
   components: {
     Layout
   }

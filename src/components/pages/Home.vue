@@ -1,4 +1,5 @@
 <template>
+  <div>
   <Layout>
     <div slot="header">
     <Header></Header>
@@ -36,18 +37,18 @@
         <br>
         <P1 style="width: 210px;margin-left: 10px"></P1>
         <Row style="margin-top: 20px" type="flex" justify="center" gutter="2px">
-          <Col span="7" order="1"><Icon type="ios-home" /><br><a href="#">我的领养</a></Col>
+          <Col span="7" order="1"><a href="#"><Icon type="ios-home" style="color: #17233d"/><br>我的领养</a></Col>
           <P2 style="margin-left: -32px"></P2>
-          <Col span="7" order="2"><Icon type="ios-filing" /><br><a href="#">我的发布</a></Col>
+          <Col span="7" order="2"><router-link to="/Publish"><Icon type="ios-filing" style="color: #17233d"/><br>我的发布</router-link></Col>
           <P2 style="margin-left: 32px"></P2>
-          <Col span="7" order="3"><Icon type="md-heart" /><br><a href="#">我的收藏</a></Col>
+          <Col span="7" order="3"><a href="#"><Icon type="md-heart" style="color: #17233d" /><br>我的收藏</a></Col>
         </Row>
         <Row style="margin-top: 30px;" type="flex" justify="center" gutter="2px">
-          <Col span="7" order="4"><Icon type="logo-usd" /><br><a href="#">我的捐款</a></Col>
+          <Col span="7" order="4"><a href="#"><Icon type="logo-usd" style="color: #17233d" /><br>我的捐款</a></Col>
           <P2 style="margin-left: -32px"></P2>
-          <Col span="7" order="5"><Icon type="ios-body" /><br><a href="#">志愿活动</a></Col>
+          <Col span="7" order="5"><a href="#"><Icon type="ios-body" style="color: #17233d" /><br>志愿活动</a></Col>
           <P2 style="margin-left: 32px"></P2>
-          <Col span="7" order="6"><Icon type="md-calendar" /><br><a href="#">预约医院</a></Col>
+          <Col span="7" order="6"><a href="#"><Icon type="md-calendar" style="color: #17233d" /><br>预约医院</a></Col>
         </Row>
       </div>
     </div>
@@ -165,6 +166,7 @@
     </div>
    </div>
   </Layout>
+  </div>
 </template>
 
 <script>
@@ -199,6 +201,23 @@ export default {
         trigger: 'click',
         arrow: 'always'
       }
+    }
+  },
+  created () {
+    this.notice()
+  },
+  methods: {
+    notice () {
+      this.$Notice.config({
+        top: 700
+      })
+      this.$Notice.open({
+        title: '宠物之家',
+        desc:
+          '领养代替购买，给每个小宝贝一个温暖的家！',
+        duration: 5,
+        color: 'black'
+      })
     }
   }
 }

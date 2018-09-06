@@ -6,11 +6,19 @@
         <a :href="'#/Login'">免费注册</a>
       </div>
       <div class="layout-ceiling-right">
-        <a href="#">宠物之家首页</a> |
+        <a :href="'#/'">宠物之家首页</a> |
         <a href="#">我的领养</a> |
-        <a href="#">发布领养</a> |
-        <a href="#">联系客服</a>
-        <a href="#" style="margin-left: 15px">个人中心</a>
+        <a :href="'#/Publish'">发布领养</a> |
+        <a href="#" style="margin-right: 30px">联系客服</a>
+        <Dropdown placement="top">
+        <a :href="'#/Information'" >个人中心</a>
+          <DropdownMenu slot="list">
+            <DropdownItem>个&nbsp;人&nbsp;资&nbsp;料</DropdownItem>
+            <DropdownItem>用&nbsp;户&nbsp;积&nbsp;分</DropdownItem>
+            <DropdownItem>账&nbsp;号&nbsp;设&nbsp;置</DropdownItem>
+            <DropdownItem><a :href="'#/Login'">退&nbsp;&nbsp;&nbsp;出</a></DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
       </div>
     </div>
     <div class="layout-header">
@@ -48,22 +56,7 @@ export default {
   components: {
     BackTop
   },
-  created () {
-    this.time()
-  },
   methods: {
-    time () {
-      this.$Notice.config({
-        top: 60
-      })
-      this.$Notice.open({
-        title: '宠物之家',
-        desc:
-        '领养代替购买，给每个小宝贝一个温暖的家！',
-        duration: 5,
-        color: 'black'
-      })
-    }
   }
 }
 </script>
@@ -92,13 +85,13 @@ export default {
     color: #9ea7b4;
   }
   .layout-ceiling{
-    background: #495060;
+    background: #515a6e;
     padding: 10px 0;
     overflow: hidden;
   }
   .layout-ceiling-right{
     float: right;
-    margin-right: 40px;
+    margin-right: 60px;
   }
   .layout-ceiling-left{
     float: left;

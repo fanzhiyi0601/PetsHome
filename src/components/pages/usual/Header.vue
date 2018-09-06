@@ -37,12 +37,13 @@
           <DropdownItem divided>志愿者团队</DropdownItem>
         </DropdownMenu>
       </Dropdown>
-      <i-menu mode="horizontal" :theme="theme" active-name="1">
+      <i-menu mode="horizontal" :theme="theme" active-name="">
         <MenuItem name="1">
-          <Icon type="ios-paper"></Icon>
+          <router-link to="/Home" style="color: #515a6e"><Icon type="ios-paper"></Icon>
           首页
+          </router-link>
         </MenuItem>
-        <MenuItem name="2">
+        <MenuItem name="2" >
           <Icon type="ios-people"></Icon>
           救助人
         </MenuItem>
