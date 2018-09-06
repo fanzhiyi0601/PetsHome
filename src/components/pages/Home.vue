@@ -29,8 +29,8 @@
       <div style="float: right;height: 400px;width: 240px;">
         <img style=";width: 60px;height: 55px;border-radius:50%;margin-top: 15px;" src="../../assets/head.jpg">
         Hi, 你好
-        <Button  type="primary" style="; margin-top: 100px; margin-left: -120px">登录</Button>
-        <Button  type="default" style="; margin-top: 100px; margin-left: 20px">签到</Button>
+        <a :href="'#/Login'"><Button  type="primary" style="; margin-top: 100px; margin-left: -120px">登录</Button></a>
+        <a :href="'#/Login'"><Button  type="default" style="; margin-top: 100px; margin-left: 20px">签到</Button></a>
         <P1 style="width: 210px;margin-left: 10px"></P1>
         <span>已有<NumberAdd :value="720000"></NumberAdd>加入我们</span>
         <br>

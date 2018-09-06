@@ -17,7 +17,7 @@
             </i-input >
           </FormItem>
           <FormItem class="formItem">
-            <Button style="width: 220px;font-size: 16px;margin-top: 15px" type="primary" @click="handleSubmit">确认登录</Button>
+            <Button style="width: 220px;font-size: 16px;margin-top: 15px" type="primary" @click="login">确认登录</Button>
           </FormItem>
         </Form>
         </TabPane>
@@ -33,19 +33,39 @@
               <Input v-model="formRegister.mobile" placeholder="输入手机号"></Input>
               <Button @click="handleReset" style="margin-left: 130px;margin-top:-32px;position: absolute; font-size: 10px">获取验证码</Button>
             </FormItem>
-            <FormItem label="验证码" prop="code">
-              <Input v-model="formRegister.mail" placeholder="验证码"></Input>
+            <FormItem label="验证码" prop="certCode">
+              <Input v-model="formRegister.certCode" placeholder="验证码"></Input>
             </FormItem>
             <FormItem label="邮箱" prop="mail">
               <Input v-model="formRegister.mail" placeholder="邮箱（选填）"></Input>
             </FormItem>
-            <FormItem style="margin-top: -10px">
+            <FormItem style="margin-top: -15px">
               <Button style="margin-left: 30px" type="primary" @click="handleSubmit">注册</Button>
               <Button @click="handleReset" style="margin-left: 25px">重置</Button>
             </FormItem>
           </Form>
         </TabPane>
-        <TabPane label="忘记密码" name="name3">忘记密码</TabPane>
+        <TabPane label="忘记密码" name="name3">
+          <Form ref="formForget" :model="formForget" :rules="ruleForget" :label-width="70"  style="text-align: left;margin-left: 20px;width: 280px;margin-top: 10px; height: 100px">
+            <FormItem label="用户名" style="margin-top: 15px" prop="">
+              <Input  type="text" v-model="formForget.user" placeholder="用户名"></Input>
+            </FormItem>
+            <FormItem label="新密码" prop="passwd">
+              <Input type="password" v-model="formForget.passwd" placeholder="密码"></Input>
+            </FormItem>
+            <FormItem label="确认密码" prop="passwordCheck" required="true">
+              <Input type="password" v-model="formForget.passwdCheck" placeholder="确认密码"></Input>
+            </FormItem>
+            <FormItem label="手机" prop="mobile">
+              <Input v-model="formForget.mobile" placeholder="输入手机号"></Input>
+              <Button @click="handleReset" style="margin-left: 120px;margin-top:-32px;position: absolute; font-size: 10px">获取验证码</Button>
+            </FormItem>
+            <FormItem label="验证码" prop="certCode">
+              <Input v-model="formForget.certCode" placeholder="验证码"></Input>
+            </FormItem>
+              <Button style="font-size: 12px;margin-top: -100px;margin-left: 300px" type="primary" @click="handleSubmit">提交</Button>
+          </Form>
+        </TabPane>
       </Tabs>
     </div>
   </div>
@@ -55,6 +75,15 @@
 export default {
   name: 'Login',
   data () {
+    const validatePassCheck = (rule, value, callback) => {
+      if (this.formForget.passwdCheck === '') {
+        callback(new Error('确认密码不能为空'))
+      } else if (this.formForget.passwdCheck !== this.formForget.passwd) {
+        callback(new Error('两次密码不一致'))
+      } else {
+        callback()
+      }
+    }
     return {
       formLogin: {
         user: '',
@@ -63,8 +92,16 @@ export default {
       formRegister: {
         user: '',
         password: '',
+        certCode: '',
         mail: '',
         mobile: ''
+      },
+      formForget: {
+        user: '',
+        mobile: '',
+        certCode: '',
+        passwd: '',
+        passwdCheck: ''
       },
       ruleLogin: {
         user: [
@@ -83,6 +120,9 @@ export default {
           { required: true, message: '密码不能为空', trigger: 'blur' },
           { type: 'string', min: 8, message: '密码不少于8位', trigger: 'blur' }
         ],
+        certCode: [
+          { required: true, message: '验证码不能为空', trigger: 'blur' }
+        ],
         mobile: [
           { required: true, message: '手机号不能为空', trigger: 'blur' },
           { pattern: '^((17[0-9])|(16[6])|(14[5,7,9])|(13[0-9])|(15[^4,\\D])|(18[0-9])|(19[8,9]))\\d{8}$', message: '手机号格式不对', trigger: 'blur' }
@@ -91,11 +131,28 @@ export default {
           { required: false, message: 'Mailbox cannot be empty', trigger: 'blur' },
           { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }
         ]
+      },
+      ruleForget: {
+        passwd: [
+          { required: true, message: '密码不能为空', trigger: 'blur' },
+          { type: 'string', min: 8, message: '密码不少于8位', trigger: 'blur' }
+        ],
+        passwordCheck: [
+          {validator: validatePassCheck, trigger: 'blur'}
+        ],
+        certCode: [
+          { required: true, message: '验证码不能为空', trigger: 'blur' }
+        ],
+        mobile: [
+          { required: true, message: '手机号不能为空', trigger: 'blur' },
+          { pattern: '^((17[0-9])|(16[6])|(14[5,7,9])|(13[0-9])|(15[^4,\\D])|(18[0-9])|(19[8,9]))\\d{8}$', message: '手机号格式不对', trigger: 'blur' }
+        ]
       }
     }
   },
   methods: {
-    handleSubmit () {
+    login () {
+      this.$router.push({path: '/'})
     },
     handleReset () {
       this.formRegister = ''
