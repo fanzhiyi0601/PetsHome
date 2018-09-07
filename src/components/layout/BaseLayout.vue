@@ -9,7 +9,7 @@
         <a :href="'#/'">宠物之家首页</a> |
         <a href="#">我的领养</a> |
         <a :href="'#/Publish'">发布领养</a> |
-        <a href="#" style="margin-right: 30px">联系客服</a>
+        <a :href="'#/Help'" style="margin-right: 30px">联系客服</a>
         <Dropdown placement="top">
         <a :href="'#/Information'" >个人中心</a>
           <DropdownMenu slot="list">

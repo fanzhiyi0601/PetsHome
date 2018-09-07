@@ -5,6 +5,7 @@ import Login from '@/components/pages/Login'
 import Display from '@/components/pages/Display'
 import Publish from '@/components/pages/Publish'
 import Information from '@/components/pages/Information'
+import Help from '@/components/pages/page/help'
 Vue.use(Router)
 
 export default new Router({
@@ -37,6 +38,10 @@ export default new Router({
       path: '/Publish',
       name: 'Publish',
       component: Publish
+    },
+    {
+      path: '/Help',
+      component: Help
     },
     {
       path: '/Information',
