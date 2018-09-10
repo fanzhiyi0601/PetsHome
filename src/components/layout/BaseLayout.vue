@@ -75,7 +75,7 @@ export default {
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
   }
   .layout-body{
-    height: 1500px;
+    height: auto;
     background: #dddee1;
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
   }

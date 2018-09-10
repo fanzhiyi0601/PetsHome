@@ -3,7 +3,7 @@
     <div slot="header">
       <Header></Header>
     </div>
-    <div slot="body">
+    <div slot="body" style="height: 1450px">
       <div class="content">
         <div style="float: left;width: 800px; ">
           <div class="divide" style="height: 200px;border:2px solid #e9eaec">
