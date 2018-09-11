@@ -70,7 +70,7 @@ export default {
     overflow: hidden;
   }
   .layout-header{
-    height: 200px;
+    height: auto;
     background: #fff;
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
   }

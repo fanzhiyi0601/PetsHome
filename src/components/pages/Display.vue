@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div slot="header">
+    <div slot="header" style="height: 200px">
       <Header></Header>
     </div>
     <div slot="body" style="height: 1450px">
